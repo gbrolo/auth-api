@@ -25,8 +25,14 @@ npm install
 if you use **npm**.
 
 ### Configuring Database
-Before configuring the database, create first a ```node_user```, which will be the super-user
-with permissions to read and write into the database.
+> **Note on using a command line:** Be sure to use a Unix-like command line that accepts bash scripts. Linux and Mac users don't worry, Windows users use **Git CMD**.
+
+
+Before configuring the database, create first a ```node_user``` directly on command line, which will be the super-user with permissions to read and write into the database:
+
+```
+CREATE USER node_user WITH SUPERUSER PASSWORD 'node_password';
+```
 
 File ```users.sql``` contains the schema for the tables used in the API. Feel free to edit or add tables as you wish. If you edit this file, then also be sure to edit ```configuredb.sh``` so that you create any
 new table that you wish to add.
@@ -36,7 +42,7 @@ For security reasons, all the information regarding connection with the database
 never be added to git. For this reason, create a folder ```secrets``` located on the root of the project
 and add these two files:
 
-### db_configuration.js
+##### db_configuration.js
 ```javascript
 module.exports = {
     user: 'node_user',
@@ -47,7 +53,7 @@ module.exports = {
 };
 ```
 
-### index.js
+##### index.js
 ```javascript
 const APP_SECRET = 'thisisnotasafesecretok';
 
