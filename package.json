@@ -1,0 +1,22 @@
+{
+  "name": "auth-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "configure": "./bin/configuredb.sh",
+    "start": "yarn run configure && node ./bin/www",
+    "dev": "yarn run configure && nodemon ./bin/www"
+  },
+  "repository": "https://github.com/gbrolo/auth-api.git",
+  "author": "Gabriel Brolo <gabrolo13@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
