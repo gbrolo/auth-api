@@ -1,9 +1,12 @@
 CREATE TABLE users (
-    username_hash character(64),
-    password_hash character(64)
+    username_hash character(64) PRIMARY KEY,
+    password_hash character(64),
+    session_id character(36)
 );
 
-INSERT INTO users (username_hash, password_hash) 
-    VALUES 
-        ('foo123', 'pass123'),
-        ('bar456', 'word456');
+CREATE TABLE users_info (
+    username_hash character(64) REFERENCES users(username_hash),
+    user_name character(30),
+    user_surname character(30),
+    user_email varchar(30)
+);
