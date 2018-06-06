@@ -1,6 +1,6 @@
 # Auth API
 
-A complete server-side Rest API built with **Express** and **PostgreSQL** that handles the authorization process, including: user registration, user login/logout and verifying a user session using security throughout cookies.
+A complete server-side Rest API built with **Express** and **PostgreSQL** that handles the authorization process, including: user registration, user login/logout and verifying a user session using security throughout cookies. For a basic front-end made with React that uses this API, visit [auth-react](https://github.com/gbrolo/auth-react).
 
 ## Getting Started
 
