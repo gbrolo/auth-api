@@ -60,6 +60,20 @@ const APP_SECRET = 'thisisnotasafesecretok';
 module.exports = { APP_SECRET };
 ```
 
+### Configuring CORS
+This API handles CORS, just edit your client's domain at ```app.js```:
+
+##### app.js
+```javascript
+...
+app.use(cors({
+    origin: 'http://localhost:3001',
+    credentials: true
+}));
+...
+```
+
+
 ### Running in development mode
 
 Development mode uses **nodemon**, a cool dependency to refresh changes quickly. Just run script dev:
